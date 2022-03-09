@@ -1,0 +1,870 @@
+// обнуление стилей 
+@import "nullstaly.scss";
+
+
+$color_a: #989898;
+$col_red: red;
+$col_w: #ffffff;
+//max-width
+$mwi: 1300px;
+
+// OpenSans Semibold
+%text {
+    font-size: 13.2px;
+    font-family: 'OpenSans', sans-serif;
+    font-weight: 600;
+}
+
+// all for Banner section
+%banner {
+    max-width: $mwi;
+    height: 570px;
+}
+
+%textbanner {
+    color: #427fce;
+    font-family: 'OpenSans', sans-serif;
+}
+
+@mixin optiontext($f, $fw, $pt) {
+    font-size: $f;
+    font-weight: $fw;
+    padding-top: $pt;
+}
+
+// button
+@mixin button($f, $p, $c, $bg, $br) {
+    font-size: $f;
+    padding: $p;
+    color: $c;
+    background-color: $bg;
+    border-radius: $br;
+}
+
+// отступ сверху-слева
+@mixin up-left($u, $l) {
+    margin-left: $u;
+    margin-top: $l;
+}
+
+// for section Content
+@mixin optiontext2($f, $fw, $pt, $c) {
+    font-size: $f;
+    font-weight: $fw;
+    padding-top: $pt;
+    color: $c;
+}
+
+@mixin option_t($f, $fw, $mt, $ml, $c) {
+    font-size: $f;
+    font-weight: $fw;
+    margin-top: $mt;
+    margin-left: $ml;
+    color: $c;
+}
+
+%p_text {
+    line-height: 28px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'OpenSans', sans-serif;
+}
+
+%circle {
+    width: 43px;
+    height: 43px;
+    border-radius: 20px;
+    display: flex;
+}
+
+%display_flex {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+//подчеркивание
+%line {
+    display: block;
+    height: 2px;
+    margin-top: 45px;
+}
+
+@mixin line($w, $bg, ) {
+    width: $w;
+    background: $bg;
+}
+
+//sec4
+%projects {
+    width: 978px;
+    height: 520px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+%progects_number {
+    width: 300px;
+    height: 520px;
+    background-color: #f9f9f9;
+    display: flex;
+    border-radius: 10px;
+}
+
+%sec4_p {
+    font-family: 'OpenSans', sans-serif;
+    font-size: 13.2px;
+    font-weight: 400;
+    line-height: 15px;
+    color: #8a8a8a;
+}
+
+%sec4_h5 {
+    font-family: 'OpenSans', sans-serif;
+    font-size: 17.2px;
+    font-weight: 600;
+    color: #484848;
+}
+
+%sec4_line_main {
+    display: block;
+    background-color: #e3e3e3;
+    margin: 0 auto;
+    margin-top: 45px;
+    width: 253px;
+    height: 14px;
+    border-radius: 6px;
+}
+
+%sec4_line_progress {
+    display: block;
+    height: 14px;
+    margin-left: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background-color: #add136;
+}
+
+%sec4_text_progress {
+    display: flex;
+    width: 254px;
+    margin: 0 auto;
+    margin-top: 20px;
+    justify-content: space-between;
+    font-size: 13.2px;
+    font-weight: 600;
+    color: #8d8d8d;
+    font-family: 'OpenSans', sans-serif;
+}
+
+%sec4_details {
+    margin-top: 25px;
+    font-size: 15.2px;
+    font-weight: 600;
+    color: #8d8d8d;
+    font-family: 'OpenSans', sans-serif;
+}
+
+%sec4_i {
+    display: block;
+    background-color: #d6d6d6;
+    height: 1px;
+    width: 252px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+$m0a: 0 auto;
+//OpenSans
+$fF: 'OpenSans',
+sans-serif;
+// text-alight
+$ce: center;
+//Monster
+$fF-M: 'Montserrat',
+sans-serif;
+$fw:400;
+$dF: flex;
+
+.wrapper {
+    max-width: $mwi;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    max-width: $mwi;
+    width: 100%;
+    height: 85px;
+    background-color: #ffffff;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    width: 520px;
+    margin-left: 120px;
+}
+
+.nav {
+    a {
+        color: $color_a;
+        text-decoration: none;
+        @extend %text
+    }
+}
+
+header .logo img {
+    @include up-left(130px, 24px);
+}
+
+header .login button {
+    @include up-left(75px, 20px);
+    @include button(13.2px, 15px 30px, #f2f8e0, #bcda5c, 20px);
+
+    &:hover {
+        border-color: #1a6bbb;
+    }
+}
+
+.banner {
+    background-color: #c8cfca;
+    opacity: 0.8;
+
+    @extend %banner
+}
+
+.banner .describe {
+    background-image: url(./images/BANNER.png);
+    @extend %banner
+}
+
+.describe p {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    @extend %textbanner;
+
+    @include optiontext(49.2px, 600, 180px);
+
+    & span {
+
+        @include optiontext(35.2px, 400, 65px)
+    }
+}
+
+.describe button {
+    @include up-left(525px, 50px);
+    @include button(19.2px, 25px 45px, #ffffff, #99c50a, 8px)
+}
+
+.content {
+    max-width: $mwi;
+    min-height: 2740px;
+    background-color: #ffffff;
+}
+
+.sec1 {
+
+    & .Logo {
+        padding-top: 100px;
+        padding-left: 650px;
+    }
+
+    & h4 {
+        width: 540px;
+        font-family: $fF;
+        text-transform: uppercase;
+        @extend %p_text;
+        @include optiontext2(31.2px, 600, 50px, #515151)
+    }
+
+    & p {
+        width: 920px;
+        font-family: $fF;
+        @extend %p_text;
+        @include optiontext2(19.2px, 400, 70px, #838383)
+    }
+
+    & .text-down {
+        @extend %p_text;
+        font-family: $fF;
+        width: 910px;
+        @include optiontext2(19.2px, 400, 50px, #838383)
+    }
+}
+
+.sec2 {
+
+    .list {
+        @extend %display_flex;
+        width: 970px;
+        margin-top: 160px;
+        margin-left: 50px;
+
+
+        & .circle {
+            @extend %circle;
+            background-color: #bcda5c;
+        }
+
+        & .circle_2 {
+            @extend %circle;
+            background-color: #5f5f5f;
+        }
+
+        & .circle_3 {
+            @extend %circle;
+            background-color: #5f5f5f;
+        }
+
+        & h6 {
+            color: $col_w;
+            font-size: 20px;
+            font-family: $fF;
+            font-weight: 600;
+            @include up-left(17px, 10px)
+        }
+
+        & .Simple {
+            font-family: $fF;
+            @include option_t(33.2px, 300, 5px, 30px, #656565)
+        }
+    }
+
+    .tabs {
+        i {
+            margin: 0 auto;
+            @extend %line;
+            @include line(980px, #e6e6e6);
+        }
+
+        .red {
+            margin-left: 0;
+            @extend %line;
+            @include line(201px, #add136);
+        }
+    }
+}
+
+.conten_t {
+    @extend %display_flex;
+    width: 868px;
+    margin-top: 65px;
+
+    .image {
+        width: 120px;
+        padding-top: 20px;
+    }
+
+    .text {
+        width: 748px;
+
+        h5 {
+            font-family: $fF;
+            @include option_t(25.2px, 400, 0, 130px, #add136)
+        }
+
+        p {
+            font-family: $fF;
+            line-height: 20px;
+            @include option_t(17.2px, 400, 45px, 105px, #9b9b9b)
+        }
+    }
+}
+
+.sec3 {
+    margin-top: 115px;
+    width: 1300px;
+    @extend %display_flex;
+
+    .FindProperties {
+        width: 50%;
+        height: 305px;
+        background: #e2f8ff;
+        display: flex;
+
+        .image {
+            @include up-left(140px, 85px)
+        }
+
+        .text {
+            width: 295px;
+            @include up-left(45px, 46px);
+
+            h5 {
+                font-family: $fF-M;
+                font-weight: $fw;
+                font-size: 23.2px;
+                color: #515151;
+            }
+
+            p {
+                margin-top: 40px;
+                font-family: $fF;
+                font-size: 17.2px;
+                color: #5b5c5d;
+                line-height: 20px;
+            }
+
+            button {
+                margin-top: 30px;
+                @include button(14.84px, 20px 26px, $col_w, #26a6d1, 7px)
+            }
+        }
+    }
+
+    .FindBuyers {
+        width: 50%;
+        height: 305px;
+        background: #f5f9eb;
+        display: flex;
+
+        .image {
+            @include up-left(80px, 110px)
+        }
+
+        .text {
+            width: 260px;
+            @include up-left(72px, 46px);
+
+            h5 {
+                font-family: $fF-M;
+                font-weight: $fw;
+                font-size: 23.2px;
+                color: #515151;
+            }
+
+            p {
+                margin-top: 40px;
+                font-family: $fF;
+                font-size: 17.2px;
+                color: #5b5c5d;
+                line-height: 20px;
+            }
+
+            button {
+                margin-top: 30px;
+                @include button(14.84px, 20px 23px, $col_w, #add136, 7px)
+            }
+        }
+    }
+}
+
+.sec4 {
+    margin: $m0a;
+
+
+    .up {
+        display: $dF;
+
+        .up-left {
+
+            h4 {
+                font-family: $fF;
+                @include option_t(29.2px, 600, 80px, 20px, #515151)
+            }
+
+            p {
+                width: 635px;
+                font-family: $fF;
+                line-height: 20px;
+                @include option_t(17.2px, 400, 30px, 20px, #8f8f8f)
+            }
+        }
+
+        .up-right {
+            button {
+                @include up-left(170px, 110px);
+
+                font-family: $fF;
+                font-weight: 600;
+                @include button(14.83px, 20px 24px, #838383, $col_w, 10px)
+            }
+        }
+    }
+
+    .down {
+        display: $dF;
+
+
+        .projects {
+            margin-top: 70px;
+            @extend %projects;
+
+            .projects-one {
+                background-image: url(./images/content/sec4/firstimg.png);
+                background-repeat: no-repeat;
+                @extend %progects_number;
+
+                .block {
+                    img {
+                        position: absolute;
+                        margin-top: -1px;
+                        margin-left: -1px;
+                    }
+
+                    span {
+                        color: $col_w;
+                        position: absolute;
+                        transform: rotate(-45deg);
+                        @include up-left(7px, 15px);
+                        font-size: 17.2px;
+                        font-weight: 400;
+                        font-family: $fF-M;
+                    }
+
+                    button {
+                        position: absolute;
+                        @include up-left(145px, 170px);
+                        @include button(16.51px, 12px 12px, $col_w, #26a6d1, 5px)
+                    }
+
+                    h5 {
+                        @extend %sec4_h5;
+                        @include up-left(25px, 255px)
+                    }
+
+                    p {
+                        @extend %sec4_p;
+                        @include up-left(25px, 20px)
+                    }
+
+                    .line {
+                        @extend %sec4_line_main;
+
+                        .progress {
+                            width: 38px;
+                            @extend %sec4_line_progress;
+                        }
+                    }
+
+                    .text-progress {
+                        @extend %sec4_text_progress;
+                    }
+
+                    i {
+                        @extend %sec4_i;
+                    }
+
+                    .details {
+                        display: flex;
+                        width: 160px;
+                        margin-left: 110px;
+                        justify-content: space-between;
+
+                        q {
+                            @extend %sec4_details;
+                        }
+
+                        a {
+                            margin-top: 25px;
+                        }
+                    }
+                }
+            }
+
+            .projects-two {
+                background-image: url(./images/content/sec4/secondimg.png);
+                background-repeat: no-repeat;
+                @extend %progects_number;
+
+                .block {
+                    img {
+                        position: absolute;
+                        margin-top: -1px;
+                        margin-left: -1px;
+                    }
+
+                    span {
+                        color: $col_w;
+                        position: absolute;
+                        transform: rotate(-45deg);
+                        @include up-left(7px, 15px);
+                        font-size: 17.2px;
+                        font-weight: 400;
+                        font-family: $fF-M;
+                    }
+
+                    button {
+                        position: absolute;
+                        @include up-left(145px, 170px);
+                        @include button(16.51px, 12px 12px, $col_w, #26a6d1, 5px)
+                    }
+
+                    h5 {
+                        @extend %sec4_h5;
+                        @include up-left(25px, 255px)
+                    }
+
+                    p {
+                        @extend %sec4_p;
+                        @include up-left(25px, 20px)
+                    }
+
+                    .line {
+                        @extend %sec4_line_main;
+
+                        .progress {
+                            width: 168px;
+                            @extend %sec4_line_progress;
+                        }
+                    }
+
+                    .text-progress {
+                        @extend %sec4_text_progress;
+                    }
+
+                    i {
+                        @extend %sec4_i;
+                    }
+
+                    .details {
+                        display: flex;
+                        width: 160px;
+                        margin-left: 110px;
+                        justify-content: space-between;
+
+                        q {
+                            @extend %sec4_details;
+                        }
+
+                        a {
+                            margin-top: 25px;
+                        }
+                    }
+                }
+            }
+
+            .projects-three {
+                background-image: url(./images/content/sec4/thirdimg.png);
+                background-repeat: no-repeat;
+                @extend %progects_number;
+
+                .block {
+                    img {
+                        position: absolute;
+                        margin-top: -1px;
+                        margin-left: -1px;
+                    }
+
+                    span {
+                        color: $col_w;
+                        position: absolute;
+                        transform: rotate(-45deg);
+                        @include up-left(7px, 15px);
+                        font-size: 17.2px;
+                        font-weight: 400;
+                        font-family: $fF-M;
+                    }
+
+                    button {
+                        position: absolute;
+                        @include up-left(145px, 170px);
+                        @include button(16.51px, 12px 12px, $col_w, #26a6d1, 5px)
+                    }
+
+                    h5 {
+                        @extend %sec4_h5;
+                        @include up-left(25px, 255px)
+                    }
+
+                    p {
+                        @extend %sec4_p;
+                        @include up-left(25px, 20px)
+                    }
+
+                    .line {
+                        @extend %sec4_line_main;
+
+                        .progress {
+                            width: 38px;
+                            @extend %sec4_line_progress;
+                        }
+                    }
+
+                    .text-progress {
+                        @extend %sec4_text_progress;
+                    }
+
+                    i {
+                        @extend %sec4_i;
+                    }
+
+                    .details {
+                        display: flex;
+                        width: 160px;
+                        margin-left: 110px;
+                        justify-content: space-between;
+
+                        q {
+                            @extend %sec4_details;
+                        }
+
+                        a {
+                            margin-top: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sec5 {
+    margin: $m0a;
+    width: 1300px;
+    height: 655px;
+    background-image: url(./images/content/sec5/bg.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-top: -50px;
+
+    .centr {
+        width: 940px;
+        margin: $m0a;
+
+        h3 {
+            text-align: center;
+            font-family: $fF;
+            @include optiontext2(39.2px, 600, 130px, #9ec02d);
+        }
+
+        p {
+            font-family: $fF;
+            text-align: center;
+            line-height: 23px;
+            @include option_t(19.2px, 400, 50px, 12px, #949494);
+        }
+
+        .testi {
+            display: $dF;
+            justify-content: space-between;
+
+            .testi_1 {
+                background-repeat: no-repeat;
+                height: 172px;
+                width: 400px;
+                margin-top: 104px;
+                background-image: url(./images/content/sec5/fraza-one.png);
+
+                img {
+
+                    position: relative;
+                }
+
+                h6 {
+                    font-family: $fF;
+                    text-align: center;
+                    @include optiontext(21.2px, 600, 25px);
+                    color: #9ec02d;
+                }
+
+                .one {
+                    width: 320px;
+                    display: block;
+                    line-height: 15px;
+                    font-size: 13.2px;
+                    font-family: 'OpenSans', sans-serif;
+                    font-weight: 400;
+                    text-align: center;
+                    @include up-left(35px, 25px);
+                }
+
+                .foto {
+                    width: 225px;
+                    display: $dF;
+                    justify-content: space-between;
+
+                    img {
+                        padding-top: 65px;
+                        padding-left: 35px;
+                    }
+
+                    span {
+                        font-size: 15.2px;
+                        color: #494949;
+                        padding-top: 95px;
+                        font-weight: $fw;
+                        font-family: $fF-M;
+                    }
+
+                }
+            }
+
+            .testi_2 {
+                background-repeat: no-repeat;
+                height: 172px;
+                width: 400px;
+                margin-top: 104px;
+                background-image: url(./images/content/sec5/fraza-one.png);
+
+                img {
+
+                    position: relative;
+                }
+
+                h6 {
+                    font-family: $fF;
+                    text-align: center;
+                    @include optiontext(21.2px, 600, 25px);
+                    color: #9ec02d;
+                }
+
+                .one {
+                    width: 320px;
+                    display: block;
+                    line-height: 15px;
+                    font-size: 13.2px;
+                    font-family: 'OpenSans', sans-serif;
+                    font-weight: 400;
+                    text-align: center;
+                    @include up-left(35px, 25px);
+                }
+
+                .foto {
+                    width: 225px;
+                    display: $dF;
+                    justify-content: space-between;
+
+                    img {
+                        padding-top: 65px;
+                        padding-left: 35px;
+                    }
+
+                    span {
+                        font-size: 15.2px;
+                        color: #494949;
+                        padding-top: 95px;
+                        font-weight: $fw;
+                        font-family: $fF-M;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+footer {
+    height: 195px;
+    background-color: $col_w;
+    padding-top: 50px;
+
+    .emblem {
+        margin: $m0a;
+
+        img {
+            margin-left: 132px;
+        }
+
+        .copy {
+            margin-top: 70px;
+            text-align: center;
+            @extend %sec4_p;
+        }
+    }
+}
